@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Data (don't push big CSVs)
+data/raw/
+data/processed/
+
+# Secrets (if you ever add)
+.env
