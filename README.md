@@ -1,56 +1,134 @@
-# AI Enabled Visa Status Prediction & Processing Time Estimator
+🌍 AI Enabled Visa Status Prediction & Processing Time Estimator
+🚀 Overview
 
-## Milestone 1 – Data Collection & Preprocessing
+Visa application processing often involves long waiting periods and uncertainty for applicants. This project aims to build an AI-powered analytics system that leverages historical visa data to estimate processing timelines and support informed decision-making. By identifying trends across regions, visa types, and time periods, the system brings transparency, insight, and predictability to the visa application process.
 
-### Dataset
-- **Source:** Kaggle – Combined_LCA_Disclosure_Data_FY2024
-- **Raw file location:** `data/raw/Combined_LCA_Disclosure_Data_FY2024.csv`
+This project is designed as an end-to-end data science and machine learning solution, following industry-standard workflows.
 
-### Steps Performed
+🎯 Problem Statement
 
-1. **Data Loading**
-   - Loaded the raw CSV file using `pandas`.
+Visa applicants and organizations lack clear visibility into:
 
-2. **Standardization of Columns**
-   - Converted all column names to uppercase and stripped extra spaces.
+How long a visa application may take to process
 
-3. **Date Columns**
-   - Detected:
-     - `RECEIVED_DATE` → application date  
-     - `DECISION_DATE` → decision date
-   - Converted them to `datetime` format.
+How processing time varies across visa categories and locations
 
-4. **Target Label Creation**
-   - Created new column:
-     - `PROCESSING_DAYS = DECISION_DATE - RECEIVED_DATE` (in days)
-   - Removed rows with invalid dates.
-   - Kept only realistic processing times (0–3650 days).
+Seasonal and regional factors affecting processing delays
 
-5. **Handling Missing Values**
-   - Numerical columns → filled with median.
-   - Categorical columns → filled with mode (most frequent value) or `"Unknown"`.
+This project addresses these challenges using data-driven analysis and predictive modeling.
 
-6. **Feature Selection**
-   - Selected main features:
-     - `CASE_STATUS`
-     - `EMPLOYER_NAME`
-     - `JOB_TITLE`
-     - `FULL_TIME_POSITION`
-     - `WORKSITE_STATE`
-     - `VISA_CLASS`
-     - `PROCESSING_DAYS` (target)
+🧠 Solution Approach
 
-7. **Categorical Encoding**
-   - Reduced too many categories for `EMPLOYER_NAME` and `JOB_TITLE` to top 20 + `"Other"`.
-   - Applied one-hot encoding to categorical columns.
+The system analyzes historical visa application records to:
 
-### Outputs
+Understand processing time behavior
 
-Processed files saved in `data/processed/`:
-- `visa_clean.csv` – cleaned selected columns
-- `visa_clean_encoded.csv` – cleaned + one-hot encoded, ready for modeling
+Discover hidden patterns and trends
 
-### How to Run
+Engineer meaningful features
 
-```bash
-python src/milestone1_preprocessing.py
+Build a foundation for predictive estimation tools
+
+The approach follows a modular pipeline that can be extended into a full-scale application.
+
+🧩 Project Modules
+🔹 Data Preparation
+
+Collection of historical visa application data from public sources
+
+Cleaning and structuring of raw data
+
+Handling missing values and inconsistencies
+
+Calculation of visa processing time (in days)
+
+🔹 Exploratory Data Analysis
+
+Visualization of processing time distributions
+
+Comparison of processing duration across visa types and regions
+
+Identification of correlations and anomalies
+
+Insight generation to guide feature design
+
+🔹 Feature Engineering
+
+Creation of aggregated features (regional and visa-based averages)
+
+Log transformation of processing time to handle skewness
+
+Preparation of feature-rich datasets for modeling
+
+🔹 Predictive Modeling (Planned)
+
+Development of regression models to estimate processing time
+
+Evaluation using standard metrics (MAE, RMSE)
+
+Model selection and optimization
+
+🔹 Application & Deployment (Planned)
+
+Web-based interface for user interaction
+
+Backend prediction engine
+
+Cloud deployment for public access
+
+🛠️ Technologies Used
+
+Python
+
+Pandas, NumPy
+
+Matplotlib, Seaborn
+
+Scikit-learn
+
+Git & GitHub
+
+Flask / Streamlit (planned)
+
+📁 Project Structure
+
+visa-processing/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── src/
+│   ├── data_preprocessing.py
+│   ├── eda_feature_engineering.py
+│   └── model_training.py
+│
+├── models/
+├── README.md
+├── requirements.txt
+└── .gitignore
+
+📊 Key Outcomes
+
+Cleaned and structured visa datasets
+
+Insightful visualizations revealing processing trends
+
+Feature-engineered datasets ready for machine learning
+
+Scalable foundation for predictive analytics
+
+🔮 Future Scope
+
+Improve prediction accuracy with advanced models
+
+Integrate real-time or updated datasets
+
+Build interactive dashboards
+
+Expose prediction services via APIs
+
+📌 Project Status
+
+🟢 Data preparation and analysis completed
+🟡 Modeling and deployment in progress
