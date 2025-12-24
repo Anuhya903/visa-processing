@@ -32,6 +32,7 @@ Build a foundation for predictive estimation tools
 The approach follows a modular pipeline that can be extended into a full-scale application.
 
 🧩 Project Modules
+
 🔹 Data Preparation
 
 Collection of historical visa application data from public sources
