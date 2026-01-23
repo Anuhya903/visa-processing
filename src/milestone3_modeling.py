@@ -1,6 +1,7 @@
 # Predictive Modeling
 import pandas as pd
 import numpy as np
+import joblib
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -57,3 +58,7 @@ if rmse_rf < rmse_lr:
 else:
     print("\n Linear Regression performs better and is selected as the final model.")
 print("\nPredictive Modelingcompleted successfully.")
+MODEL_DIR = Path("model")
+MODEL_DIR.mkdir(exist_ok=True)
+joblib.dump(rf, MODEL_DIR / "rf_model.pkl")
+print("Random Forest model saved successfully.")

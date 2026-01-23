@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visa Processing Time Estimator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Visa Processing Time Estimator</h1>
+        <form method="POST">
+            <label>Visa Class Average Days</label>
+            <input type="number" step="0.01" name="visa_class_avg" required>
+            <label>State Average Days</label>
+            <input type="number" step="0.01" name="state_avg" required>
+            <label>Full Time Position</label>
+            <select name="full_time">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+            <div class="result">
+                Estimated Processing Time: {{ prediction }} days
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
