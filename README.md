@@ -32,11 +32,11 @@ Build a foundation for predictive estimation tools
 
 The approach follows a modular pipeline that can be extended into a full-scale application.
 
-🌐 Live Deployment
+**🌐 Live Deployment**
 
 The application has been successfully deployed and is accessible online.
 
-🔗 Live Demo:
+**🔗 Live Demo:**
 
 👉 https://visa-processing-ai.onrender.com/
 
