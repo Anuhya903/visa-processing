@@ -32,6 +32,16 @@ Build a foundation for predictive estimation tools
 
 The approach follows a modular pipeline that can be extended into a full-scale application.
 
+🌐 Live Deployment
+
+The application has been successfully deployed and is accessible online.
+
+🔗 Live Demo:
+
+👉 https://visa-processing-ai.onrender.com/
+
+Users can input visa-related parameters and instantly receive an estimated processing time based on the trained machine learning model.
+
 **🧩 Project Modules**
 
 **🔹 Data Preparation**
